@@ -1,0 +1,23 @@
+{
+  "name": "screenshot-lambda",
+  "version": "1.0.0",
+  "description": "Lambda that captures webpage screenshots with mobile/desktop/tablet viewport",
+  "main": "dist/handler.js",
+  "scripts": {
+    "build": "tsc",
+    "package": "npm run build && cd dist && zip -r ../screenshot-lambda.zip .",
+    "clean": "rm -rf dist screenshot-lambda.zip"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "^130.0.0",
+    "puppeteer-core": "^23.6.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
